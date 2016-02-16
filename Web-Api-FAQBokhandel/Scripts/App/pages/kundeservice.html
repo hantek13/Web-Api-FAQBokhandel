@@ -1,0 +1,40 @@
+﻿
+
+<div class="row" ng-controller="kundeserviceController">
+    
+    <div class="text-center" ng-show="laster"><img src="../../../Content/Bilder/ajax_loader_gray.gif" class="ajax-loader" /></div>
+    <div class="col-sm-8 col-sm-offset-2" ng-show="visKunder">
+        <h2>Spørsmålene som er sendt av kunder</h2>
+        <div class="form-group1">
+            <input type="text" ng-model="search" class="form-control" placeholder="Søk...">
+        </div>
+        <table class="table table-bordered table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>Navn</th>
+                    <th>E-post</th>
+                    <th>Katagori</th>
+                    <th>Spørsmål</th>
+                    <th>Dato</th>
+                 
+                </tr>
+            </thead>
+
+            <tbody ng-repeat="kS in kundeSporsmoler | filter: search">
+                <tr>
+                    <td>{{kS.Navn}}</td>
+                    <td>{{kS.Email}}</td>
+                    <td>{{kS.KatagoriType}}</td>
+                    <td>{{kS.Sporsmoltext}}</td>
+                    <td>{{kS.Dato}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+
+
+
